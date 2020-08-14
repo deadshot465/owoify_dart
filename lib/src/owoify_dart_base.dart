@@ -5,12 +5,13 @@ import 'package:owoify_dart/src/utility/presets.dart';
 final WORD_REGEX = RegExp(r'[^\s]+');
 final SPACE_REGEX = RegExp(r'\s+');
 
-enum OwoifyLevel {
-  Owo, Uwu, Uvu
-}
+/// The enumeration of available owoify levels.
+enum OwoifyLevel { Owo, Uwu, Uvu }
 
+/// The entry point of the `owoify` function.
+/// The `owoify` function is implemented as a static function of this class.
 class Owoifier {
-  static String owoify(String source, { OwoifyLevel level = OwoifyLevel.Owo }) {
+  static String owoify(String source, {OwoifyLevel level = OwoifyLevel.Owo}) {
     var wordMatches = WORD_REGEX.allMatches(source);
     var spaceMatches = SPACE_REGEX.allMatches(source);
 

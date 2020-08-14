@@ -1,3 +1,4 @@
+/// A function that interleaves an iterable of words and an iterable of spaces.
 List<T> interleaveArrays<T>(Iterable<T> a, Iterable<T> b) {
   var arr = <T>[];
   var observed = a.toList();
