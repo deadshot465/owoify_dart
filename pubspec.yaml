@@ -1,6 +1,6 @@
 name: owoify_dart
 description: Turning your worst nightmare into a Dart package. This is a Dart port of mohan-cao's owoify-js, which will help you turn any string into nonsensical babyspeaks.
-version: 1.0.1
+version: 1.0.2
 homepage: https://github.com/deadshot465/owoify_dart
 repository: https://github.com/deadshot465/owoify_dart
 

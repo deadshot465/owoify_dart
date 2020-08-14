@@ -127,13 +127,7 @@ class Word {
         _searchValueContainsReplacedWords(searchValue, replaceValue)) {
       return this;
     }
-    var replacingWord = '';
-    if (searchValue.firstMatch(_word).groupCount > 0) {
-      replacingWord = _word.replaceAllMapped(captures.group(0),
-          (match) => replaceValue.replaceAll('\\1', '${match[1]}'));
-    } else {
-      replacingWord = _word.replaceAll(captures.group(0), replaceValue);
-    }
+    var replacingWord = _word.replaceAll(captures.group(0), replaceValue);
     var collection = searchValue.allMatches(_word);
     var replacedWords = <String>[];
     if (collection.length > 1) {
