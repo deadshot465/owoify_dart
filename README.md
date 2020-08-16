@@ -1,7 +1,7 @@
 # owoify_dart
 Turning your worst nightmare into a Dart package.
 
-- [Dart package]()
+- [Dart package](https://pub.dev/packages/owoify_dart/)
 
 This is a Dart port of [mohan-cao's owoify-js](https://github.com/mohan-cao/owoify-js), which will help you turn any string into nonsensical babyspeak similar to LeafySweet's infamous Chrome extension.
 
