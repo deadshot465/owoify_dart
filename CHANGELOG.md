@@ -1,3 +1,6 @@
+## 1.0.4
+- Bug fixes.
+
 ## 1.0.3
 - Update README.md
 

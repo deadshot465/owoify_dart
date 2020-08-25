@@ -41,7 +41,7 @@ final SPECIFIC_CONSONANTS_O_TO_LETTER_AND_WO_LOWER =
 final VORW_LE_TO_WAL = RegExp(r'[vw]le');
 final FI_TO_FWI_UPPER = RegExp(r'FI');
 final FI_TO_FWI_LOWER = RegExp(r'([Ff])i');
-final VER_TO_WER = RegExp(r'([Ff])i');
+final VER_TO_WER = RegExp(r'([Vv])er');
 final POI_TO_PWOI = RegExp(r'([Pp])oi');
 final SPECIFIC_CONSONANTS_LE_TO_LETTER_AND_WAL =
     RegExp(r'([DdFfGgHhJjPpQqRrSsTtXxYyZz])le$');
