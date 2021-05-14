@@ -13,3 +13,5 @@ build/
 doc/api/
 
 .idea/
+.DS_Store
+**/*/.DS_Store
