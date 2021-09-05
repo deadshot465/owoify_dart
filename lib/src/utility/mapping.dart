@@ -198,8 +198,8 @@ Word mapSpecificConsonantsOToLetterAndWo(Word input) {
       .replace(SPECIFIC_CONSONANTS_O_TO_LETTER_AND_WO_LOWER, '\\1wo')
       .replaceWithFuncMultiple(SPECIFIC_CONSONANTS_O_TO_LETTER_AND_WO_UPPER,
           (str1, str2) {
-    var msg = str1;
-    if (str2.toUpperCase() == str2) {
+    var msg = str1!;
+    if (str2!.toUpperCase() == str2) {
       msg += 'W';
     } else {
       msg += 'w';

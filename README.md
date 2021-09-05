@@ -24,7 +24,7 @@ Because [pub.dev](https://pub.dev/) doesn't have any owoify package. And since I
 Add it to your `pubspec.yaml` file:
 ```yaml
 dependencies:
-  owoify_dart: ^1.0.0
+  owoify_dart: ^1.1.0
 ```
 And run this command in your command line:
 ```bash
