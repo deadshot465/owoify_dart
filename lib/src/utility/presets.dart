@@ -5,14 +5,21 @@ const SPECIFIC_WORD_MAPPING_LIST = [
   mapMomToMwom,
   mapTimeToTim,
   mapMeToMwe,
-  mapNVowelToNy,
   mapOverToOwor,
   mapOveToUv,
   mapHahaToHeheXd,
   mapTheToTeh,
   mapYouToU,
   mapReadToWead,
-  mapWorseToWose
+  mapWorseToWose,
+  mapGreatToGwate,
+  mapAviatToAwiat,
+  mapDedicatToDeditat,
+  mapRememberToRember,
+  mapWhenToWen,
+  mapFrightenedToFrigten,
+  mapMemeToMem,
+  mapFeelToFell
 ];
 
 const UVU_MAPPING_LIST = [
@@ -35,6 +42,7 @@ const UWU_MAPPING_LIST = [
 ];
 
 const OWO_MAPPING_LIST = [
+  mapNVowelToNy,
   mapLlToWw,
   mapVowelOrRExceptOLToWl,
   mapOldToOwld,
@@ -49,5 +57,7 @@ const OWO_MAPPING_LIST = [
   mapConsonantsRToConsonantW,
   mapLyToWy,
   mapPleToPwe,
-  mapNrToNw
+  mapNrToNw,
+  mapMemToMwem,
+  unmapNywoToNyo
 ];

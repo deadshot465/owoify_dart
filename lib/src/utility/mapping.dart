@@ -50,10 +50,14 @@ final LY_TO_WY_UPPER = RegExp(r'Ly');
 final LY_TO_WY_LOWER = RegExp(r'ly');
 final PLE_TO_PWE = RegExp(r'([Pp])le');
 final NR_TO_NW_UPPER = RegExp(r'NR');
-final NR_TO_NW_LOWER = RegExp(r'nr');
+final NR_TO_NW_LOWER = RegExp(r'([Nn])r');
+final MEM_TO_MWEM_UPPER = RegExp(r'Mem');
+final MEM_TO_MWEM_LOWER = RegExp(r'mem');
+final NYWO_TO_NYO = RegExp(r'([Nn])ywo');
 final FUC_TO_FWUC = RegExp(r'([Ff])uc');
 final MOM_TO_MWOM = RegExp(r'([Mm])om');
-final ME_TO_MWE = RegExp(r'([Mm])e');
+final ME_TO_MWE_UPPER = RegExp(r'^Me$');
+final ME_TO_MWE_LOWER = RegExp(r'^me$');
 final N_VOWEL_TO_NY_FIRST = RegExp(r'n([aeiou])');
 final N_VOWEL_TO_NY_SECOND = RegExp(r'N([aeiou])');
 final N_VOWEL_TO_NY_THIRD = RegExp(r'N([AEIOU])');
@@ -66,6 +70,15 @@ final YOU_TO_U_LOWER = RegExp(r'\byou\b');
 final TIME_TO_TIM = RegExp(r'\b([Tt])ime\b');
 final OVER_TO_OWOR = RegExp(r'([Oo])ver');
 final WORSE_TO_WOSE = RegExp(r'([Ww])orse');
+final GREAT_TO_GWATE = RegExp(r'([Gg])reat');
+final AVIAT_TO_AWIAT = RegExp(r'([Aa])viat');
+final DEDICAT_TO_DEDITAT = RegExp(r'([Dd])edicat');
+final REMEMBER_TO_REMBER = RegExp(r'([Rr])emember');
+final WHEN_TO_WEN = RegExp(r'([Ww])hen');
+final FRIGHTENED_TO_FRIGTEN = RegExp(r'([Ff])righten(ed)*');
+final MEME_TO_MEM_FIRST = RegExp(r'Meme');
+final MEME_TO_MEM_SECOND = RegExp(r'Mem');
+final FEEL_TO_FELL = RegExp(r'^([Ff])eel$');
 
 // Additional kaomojis come from [owoify](https://pypi.org/project/owoify/) and Discord.
 const FACES = [
@@ -113,6 +126,7 @@ Word mapOToOwO(Word input) {
 }
 
 Word mapEwToUwu(Word input) => input.replace(EW_TO_UWU, 'uwu');
+
 Word mapHeyToHay(Word input) => input.replace(HEY_TO_HAY, '\\1ay');
 
 Word mapDeadToDed(Word input) {
@@ -218,9 +232,12 @@ Word mapFiToFwi(Word input) {
 }
 
 Word mapVerToWer(Word input) => input.replace(VER_TO_WER, 'wer');
+
 Word mapPoiToPwoi(Word input) => input.replace(POI_TO_PWOI, '\\1woi');
+
 Word mapSpecificConsonantsLeToLetterAndWal(Word input) =>
     input.replace(SPECIFIC_CONSONANTS_LE_TO_LETTER_AND_WAL, '\\1wal');
+
 Word mapConsonantsRToConsonantW(Word input) =>
     input.replace(CONSONANT_R_TO_CONSONANT_W, '\\1w');
 
@@ -231,12 +248,20 @@ Word mapLyToWy(Word input) {
 Word mapPleToPwe(Word input) => input.replace(PLE_TO_PWE, '\\1we');
 
 Word mapNrToNw(Word input) {
-  return input.replace(NR_TO_NW_LOWER, 'nw').replace(NR_TO_NW_UPPER, 'NW');
+  return input.replace(NR_TO_NW_LOWER, '\\1w').replace(NR_TO_NW_UPPER, 'NW');
 }
 
+Word mapMemToMwem(Word input) =>
+    input.replace(MEM_TO_MWEM_UPPER, 'mwem').replace(MEM_TO_MWEM_LOWER, 'Mwem');
+
+Word unmapNywoToNyo(Word input) => input.replace(NYWO_TO_NYO, '\\1yo');
+
 Word mapFucToFwuc(Word input) => input.replace(FUC_TO_FWUC, '\\1wuc');
+
 Word mapMomToMwom(Word input) => input.replace(MOM_TO_MWOM, '\\1wom');
-Word mapMeToMwe(Word input) => input.replace(ME_TO_MWE, '\\1we');
+
+Word mapMeToMwe(Word input) =>
+    input.replace(ME_TO_MWE_UPPER, 'Mwe').replace(ME_TO_MWE_LOWER, 'mwe');
 
 Word mapNVowelToNy(Word input) {
   return input
@@ -250,6 +275,7 @@ Word mapOveToUv(Word input) {
 }
 
 Word mapHahaToHeheXd(Word input) => input.replace(HAHA_TO_HEHE_XD, 'hehe xD');
+
 Word mapTheToTeh(Word input) => input.replace(THE_TO_TEH, '\\1eh');
 
 Word mapYouToU(Word input) {
@@ -257,5 +283,27 @@ Word mapYouToU(Word input) {
 }
 
 Word mapTimeToTim(Word input) => input.replace(TIME_TO_TIM, '\\1im');
+
 Word mapOverToOwor(Word input) => input.replace(OVER_TO_OWOR, '\\1wor');
+
 Word mapWorseToWose(Word input) => input.replace(WORSE_TO_WOSE, '\\1ose');
+
+Word mapGreatToGwate(Word input) => input.replace(GREAT_TO_GWATE, '\\1wate');
+
+Word mapAviatToAwiat(Word input) => input.replace(AVIAT_TO_AWIAT, '\\1wiat');
+
+Word mapDedicatToDeditat(Word input) =>
+    input.replace(DEDICAT_TO_DEDITAT, '\\1editat');
+
+Word mapRememberToRember(Word input) =>
+    input.replace(REMEMBER_TO_REMBER, '\\1ember');
+
+Word mapWhenToWen(Word input) => input.replace(WHEN_TO_WEN, '\\1en');
+
+Word mapFrightenedToFrigten(Word input) =>
+    input.replace(FRIGHTENED_TO_FRIGTEN, '\\1rigten');
+
+Word mapMemeToMem(Word input) =>
+    input.replace(MEME_TO_MEM_FIRST, 'mem').replace(MEME_TO_MEM_SECOND, 'Mem');
+
+Word mapFeelToFell(Word input) => input.replace(FEEL_TO_FELL, '\\1ell');
